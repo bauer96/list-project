@@ -13,6 +13,8 @@ const myItemsList = document.querySelector('.list-items');
 // array which stores every todos
 let myItems = [];
 
+let user = "Hannes"
+
 
 itemForm.addEventListener('submit', function(event) {
 event.preventDefault()
@@ -29,15 +31,25 @@ itemForm.addEventListener('keypress', function(event) {
      } // call addTodo function with input box current value
 });
 
+function checkInput() {
+    if(itemInput.value.length > 0) {
+        console.log("item generated");
+    } else {
+       alert("Item can not generated");
+    }
+}
+
 // function to add todo
 function addItem(item) {
+    checkInput()
   // if item is not empty
   if (item !== '') {
     // make a todo object, which has id, name, and completed properties
     const newItem = {
       id: Date.now(),
       name: item,
-      completed: false
+      completed: false,
+      user: user
     };
 
 // then add it to todos array
