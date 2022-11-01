@@ -150,10 +150,59 @@ footer {
 }
 
 
+.display-btn {
+    width: 200px;
+    height: 60px;
+    background-color: #764AF1;
+    border: none;
+    color:white;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.display-btn:hover {
+    background-color: #6941d6;
+}
 
+.notification-box {
+    background-color: white;
+    width: 400px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-left: 8px solid #764AF1;
+    position: absolute;
+    top: 30px;
+    left: -100%;
+    transition: all .3s;
+}
 
+.notification-box.active {
+    left: 30px;
+}
 
+.fa-check, .fa-xmark {
+    position: absolute;
+    font-size: 26px;
+}
 
+.fa-check {
+    left: 15px;
+    background-color: #764AF1;
+    border-radius: 50%;
+    color: white;
+}
 
+.fa-xmark {
+    right: 15px;
+    cursor: pointer;
+}
 
+.box-text p {
+    color: gray;
+}

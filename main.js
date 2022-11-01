@@ -1,7 +1,7 @@
 // VERSION 1.2 NOW
 
 // select everything
-// select the todo-form
+// select the item-form
 const itemForm = document.querySelector('.item-form');
 
 // select the input box
@@ -15,14 +15,35 @@ let myItems = [];
 
 let user = "Hannes"
 
+// toast modal section 
+let displayBtn = document.querySelector('.display-btn');
+let closeBtn = document.querySelector('.close-btn');
+let notificationBox = document.querySelector('.notification-box');
+let action;
+
+
+closeBtn.addEventListener('click', function() {
+    notificationBox.classList.remove('active');
+    clearTimeout(action)
+})
+
 
 itemForm.addEventListener('submit', function(event) {
+    
+    notificationBox.innerHTML = ` <i class="fa-solid fa-check"></i> <p> ${user} has added ${itemInput.value} </p>`
+    notificationBox.classList.add('active');
+     action = setTimeout(function() {
+    notificationBox.classList.remove('active')}, 3000);
 event.preventDefault()
 addItem(itemInput.value);
 })
 // add an eventListener on form, and listen for submit event
 itemForm.addEventListener('keypress', function(event) {
     if (event.key === "Enter")  {
+        notificationBox.innerHTML = ` <i class="fa-solid fa-check"></i> <p> ${user} has added ${itemInput.value} </p>`
+        notificationBox.classList.add('active');
+         action = setTimeout(function() {
+        notificationBox.classList.remove('active')}, 3000);
   // prevent the page from reloading when submitting the form
   
   event.preventDefault();
@@ -156,6 +177,10 @@ myItemsList.addEventListener('click', function(event) {
   }
 // check if that is a delete-button
   if (event.target.classList.contains('fa-square-minus')) {
+    notificationBox.innerHTML = ` <i class="fa-solid fa-check"></i> <p> ${user} has deleted ${itemInput}</p>`
+    notificationBox.classList.add('active');
+     action = setTimeout(function() {
+    notificationBox.classList.remove('active')}, 3000);
     // get id from data-key attribute's value of parent <li> where the delete-button is present
     deleteItem(event.target.parentElement.getAttribute('data-key'));
   }
