@@ -177,11 +177,14 @@ myItemsList.addEventListener('click', function(event) {
   }
 // check if that is a delete-button
   if (event.target.classList.contains('fa-square-minus')) {
-    notificationBox.innerHTML = ` <i class="fa-solid fa-check"></i> <p> ${user} has deleted ${itemInput}</p>`
+    
+    notificationBox.innerHTML = ` <i class="fa-solid fa-xmark"></i> <p> ${user} has deleted </p>`
     notificationBox.classList.add('active');
      action = setTimeout(function() {
     notificationBox.classList.remove('active')}, 3000);
     // get id from data-key attribute's value of parent <li> where the delete-button is present
     deleteItem(event.target.parentElement.getAttribute('data-key'));
+    
+   
   }
 });
