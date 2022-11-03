@@ -12,7 +12,7 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    width: 100vw;
+    
 }
 
 .title {
@@ -32,6 +32,8 @@ body {
   }
 
   .container {
+    margin-left: auto;
+    margin-right: auto;
     width: 450px;
     padding: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -142,7 +144,48 @@ body {
     text-decoration: line-through;
   }
 
+ .navbar a {
+    color: rgb(8, 6, 133);
+    font-weight: bold;
+    text-decoration: none;
+ }
 
+.navbar {
+    font-size: 20px;
+    width: 98vw;
+   background-color: white;
+    padding: 10px;
+    height: 50px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.nav-links {
+    display: flex;
+    
+    
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    list-style: none;
+}
+
+.img-circle {
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    background-color: rgb(8, 6, 133);
+    border-radius: 100%;
+    text-align: center;
+}
 
 footer {
     padding: 10px;
@@ -217,6 +260,10 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+.navbar {
+    width: 95vw;
+}
+
     .container {
         width: 90%;
     }
@@ -226,6 +273,7 @@ footer {
     }
 
     .notification-box.active {
+        top: 80px;
         left: 15px;
         width: 90%;
         font-size: 16px;
